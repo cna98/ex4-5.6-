@@ -3,7 +3,7 @@
 
 import java.util.Scanner;
 
-public class Ex4method {
+public class Ex4Method {
 
 	public static void ex4m()
 	{
