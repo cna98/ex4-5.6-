@@ -1,0 +1,79 @@
+//مرتب سازی آرایه با دو روش
+
+
+import java.util.Scanner;
+
+public class Ex4method {
+
+	public static void ex4m()
+	{
+		System.out.print("Enter size of array : ");
+		
+		Scanner input = new Scanner(System.in);
+		
+		
+		int size = input.nextInt();
+		
+		int[] array1 = new int[size];
+		
+		System.out.println("Enter elements of array :");
+		
+		for(int i = 0 ; i <size ; i++)
+		{
+			array1[i] = input.nextInt();
+		}
+		
+		int d , swap;
+		for(int i = 1 ; i <= size-1 ; i++) //insertion sort
+		{
+			d = i;
+			while(d > 0 && array1[d] < array1[d-1])
+			{
+				swap = array1[d];
+				array1[d] = array1[d-1];
+				array1[d-1] = swap;
+				d--;
+				
+			}
+		}
+		
+		for(int value : array1)
+		{
+			System.out.print(String.format("%d\t", value));
+		}
+		
+		System.out.println("\nEnter elements of array again ! ");
+		
+		for(int i = 0 ; i < size ; i++)
+		{
+			array1[i] = input.nextInt();
+		}
+		
+		for(int i = 0 ; i <size ; i++) //bubble sort
+		{
+			for(int j = 0 ; j < size - i - 1 ; j++)
+			{
+				if(array1[j] > array1[j+1])
+				{
+					swap = array1[j];
+					array1[j] = array1[j+1];
+					array1[j+1] = swap;
+				}
+			}
+		}
+		
+		for(int value : array1)
+		{
+			System.out.print(String.format("%d\t", value));
+		}
+		
+		
+	}
+	
+	public static void main(String[]args)
+	{
+		ex4m();
+	}
+	
+	
+}
